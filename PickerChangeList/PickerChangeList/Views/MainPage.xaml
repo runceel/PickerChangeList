@@ -8,11 +8,6 @@
     <Picker ItemsSource="{Binding Model1s}" 
             SelectedItem="{Binding Model1.Value}" 
             ItemDisplayBinding="{Binding Name}"/>
-    <Label Text="{Binding Model1.Value.Name}"/>
-    <Picker ItemsSource="{Binding Model1.Value.Model2s}"
-            SelectedItem="{Binding Model2.Value}"
-            ItemDisplayBinding="{Binding Name}"/>
-    <Label Text="{Binding Model2.Value.Name}"/>
     <ListView ItemsSource="{Binding Model1.Value.Model2s}">
       <ListView.ItemTemplate>
         <DataTemplate>

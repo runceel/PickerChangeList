@@ -19,10 +19,6 @@ namespace PickerChangeList.ViewModels {
         public MainPageViewModel(INavigationService navigationService, CoreModel coreModel) : base(navigationService) {
             Model1s = coreModel.Model1s.ToReadOnlyReactiveCollection();
             Model1 = new ReactiveProperty<Model1>(Model1s.First());
-            Model2 = new ReactiveProperty<Model2>(Model1.Value.Model2s.First());
-            
-            Model1.Subscribe(x => Model2.Value = x.Model2s.First());
-
             PageContentViewModels = Model1.Value.Model2s.ToReadOnlyReactiveCollection(x => new PageContentViewModel(x));
         }
     }
