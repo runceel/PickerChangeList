@@ -10,7 +10,6 @@ using System.Text;
 
 namespace PickerChangeList.ViewModels {
     public class MainPageViewModel : ViewModelBase {
-
         public ReadOnlyReactiveCollection<Model1> Model1s { get; }
         public ReactiveProperty<Model1> Model1 { get; }
         public ReactiveProperty<Model2> Model2 { get; }
