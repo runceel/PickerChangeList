@@ -19,12 +19,15 @@ namespace PickerChangeList.Models {
                 new Model1(new List<Model2>(){
                     new Model2(){Name = "いとう1"},
                     new Model2(){Name = "いとう2"},
-                    new Model2(){Name = "いとう3"}
+                    new Model2(){Name = "いとう3"},
+                    new Model2(){Name = "いとう4"}
                 }){Name = "いとう" },
                 new Model1(new List<Model2>(){
                     new Model2(){Name = "うえだ1"},
                     new Model2(){Name = "うえだ2"},
-                    new Model2(){Name = "うえだ3"}
+                    new Model2(){Name = "うえだ3"},
+                    new Model2(){Name = "うえだ4"},
+                    new Model2(){Name = "うえだ5"}
                 }){Name = "うえだ" }
             };
         }
