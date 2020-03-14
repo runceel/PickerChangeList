@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace PickerChangeList.Models {
     public class CoreModel : BindableBase {
-        public ObservableCollection<Model1> Model1s { get; private set; }
+        public ObservableCollection<Model1> Model1s { get; }
         public CoreModel() {
             Model1s = new ObservableCollection<Model1>() {
                 new Model1(new List<Model2>(){
