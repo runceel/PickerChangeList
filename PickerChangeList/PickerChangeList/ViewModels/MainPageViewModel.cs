@@ -9,7 +9,6 @@ namespace PickerChangeList.ViewModels
     {
         public ReadOnlyReactiveCollection<Model1> Model1s { get; }
         public ReactiveProperty<Model1> Model1 { get; }
-        public ReactiveProperty<Model2> Model2 { get; }
 
         public ReadOnlyReactiveCollection<PageContentViewModel> PageContentViewModels { get; }
         public MainPageViewModel(INavigationService navigationService, CoreModel coreModel) : base(navigationService)
