@@ -1,13 +1,15 @@
-﻿using Prism;
-using Prism.Ioc;
-using PickerChangeList.ViewModels;
+﻿using PickerChangeList.ViewModels;
 using PickerChangeList.Views;
+using Prism;
+using Prism.Ioc;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace PickerChangeList {
-    public partial class App {
+namespace PickerChangeList
+{
+    public partial class App
+    {
         /* 
          * The Xamarin Forms XAML Previewer in Visual Studio uses System.Activator.CreateInstance.
          * This imposes a limitation in which the App class must have a default constructor. 
@@ -17,13 +19,15 @@ namespace PickerChangeList {
 
         public App(IPlatformInitializer initializer) : base(initializer) { }
 
-        protected override async void OnInitialized() {
+        protected override async void OnInitialized()
+        {
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");
         }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry) {
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
         }
