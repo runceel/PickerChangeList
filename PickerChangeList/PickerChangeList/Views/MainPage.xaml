@@ -3,29 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:PickerChangeList.Views"
              x:Class="PickerChangeList.Views.MainPage">
-  <StackLayout>
-    <Picker ItemsSource="{Binding Model1s}" 
+    <StackLayout>
+        <Picker ItemsSource="{Binding Model1s}" 
             SelectedItem="{Binding Model1.Value}" 
-            ItemDisplayBinding="{Binding Name}"/>
-    <Label Text="ListViewはPickerを切り替えると変わってくれる"/>
-    <ListView ItemsSource="{Binding Model1.Value.Model2s}">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <Label Text="{Binding Name}"/>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-    <Label Text="ContentViewもPickerを切り替えると変わって欲しい"/>
-    <ListView ItemsSource="{Binding PageContentViewModels}">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <views:PageContentView BindingContext="{Binding}"/>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
+            ItemDisplayBinding="{Binding Name.Value}"/>
+        <Label Text="ListViewはPickerを切り替えると変わってくれる"/>
+        <ListView ItemsSource="{Binding Model1.Value.PageContents}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Name.Value}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="ContentViewもPickerを切り替えると変わって欲しい"/>
+        <ListView ItemsSource="{Binding Model1.Value.PageContents}" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <views:PageContentView />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

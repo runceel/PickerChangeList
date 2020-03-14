@@ -7,15 +7,13 @@ namespace PickerChangeList.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        public ReadOnlyReactiveCollection<Model1> Model1s { get; }
-        public ReactiveProperty<Model1> Model1 { get; }
+        public ReadOnlyReactiveCollection<PageContentListViewModel> Model1s { get; }
+        public ReactiveProperty<PageContentListViewModel> Model1 { get; }
 
-        public ReadOnlyReactiveCollection<PageContentViewModel> PageContentViewModels { get; }
         public MainPageViewModel(INavigationService navigationService, CoreModel coreModel) : base(navigationService)
         {
-            Model1s = coreModel.Model1s.ToReadOnlyReactiveCollection();
-            Model1 = new ReactiveProperty<Model1>(Model1s.First());
-            PageContentViewModels = Model1.Value.Model2s.ToReadOnlyReactiveCollection(x => new PageContentViewModel(x));
+            Model1s = coreModel.Model1s.ToReadOnlyReactiveCollection(x => new PageContentListViewModel(x));
+            Model1 = new ReactiveProperty<PageContentListViewModel>(Model1s.First());
         }
     }
 }

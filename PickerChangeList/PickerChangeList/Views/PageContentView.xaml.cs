@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PickerChangeList.Views {
+namespace PickerChangeList.Views
+{
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PageContentView : ContentView {
-        public PageContentView() {
+    public partial class PageContentView : ContentView
+    {
+        public PageContentView()
+        {
             InitializeComponent();
         }
     }
